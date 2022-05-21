@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>
+Bill Generation
+</title>
+</head>
+<body>
+<style>
+.Registration-page {
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+body {
+  background-image:url("img/images3.jpg");
+  background-repeat: no-repeat; 
+  background-position: right top;
+  opacity: 0.82;
+  filter: alpha(opacity=50);
+  background-attachment: fixed;
+  background-size:100% 100%;
+     
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 70%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form input[type=submit],input[type=reset]{
+  font-family: "Roboto", sans-serif;
+  background: #41aadb;
+  width: 37%;
+  border-radius:10px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+</style>
+
+</div>
+<div class="Registration-page">
+  
+<div class="form">
+    
+<form class="Registration-form" method="Post" action="/bill/getbillinfo/">{% csrf_token %}
+ 
+<h1>Welcome {{doc}}<br>Your Appointments</h1>
+    <center>
+    <table border="1">
+        <tr><th>Date</th><th>Patient_id</th><th>Patient_name</th></tr>
+{% for i in app %}
+    <tr><td>{{i.date}}    </td><td>{{i.patient_id}}    </td><td>{{i.patient_name}}    </td></tr>
+{% endfor %}
+    </table>
+    </center>
+</form>
+
+</div>
+
+</body>
+</html>

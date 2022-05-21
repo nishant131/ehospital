@@ -1,0 +1,70 @@
+<html>
+<head>{% load static%}
+<title>
+Payment
+</title>
+</head>
+<body>
+<style>
+.Registration-page {
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form input[type=submit],input[type=reset]{
+  font-family: "Roboto", sans-serif;
+  background: #41aadb;
+  width: 37%;
+  border-radius:10px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.form select{
+  width:353px;
+  height:50px;
+  font-size:14px;
+  font-family: "Roboto", sans-serif;
+  background-color:#f2f2f2;
+  color:#000000;
+ }
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+body {
+  background-image:url("img/pay.png");
+  background-repeat: no-repeat; 
+  background-position: right top;
+  opacity: 0.82;
+  filter: alpha(opacity=50);
+  background-attachment: fixed;
+  background-size:100% 100%;
+     
+}
+</style>
+</div>
+<div class="Registration-page">
+  
+<div class="form">
+    
+<form class="Registration-form" action="/bill/billpaid/" method="post">{% csrf_token %}
+ 
+<h1>Payment</h1>
+<h3>Total Amount:{{total}}<br><br><select>
+<option value="Debit-card">Debit-Crad</option>
+<option value="Credit-card">Credit-Card</option>
+<option value="Net-bankig">Net-Bankig</option>
+</select><br><br>
+
+</h3><input type="submit" value="Pay">
+</form>
+</div>
+
+</body>
+</html>

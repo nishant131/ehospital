@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>{% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Appointment</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'-->
+	<link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+	<script src="js/modernizr.js"></script>
+	<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+	<style>
+.login-page {
+  width: 700px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+body {
+  background-image:url({% static "img/images2.png"%});
+  background-repeat: no-repeat; 
+  background-position: right top;
+  opacity: 0.92;
+  filter: alpha(opacity=50);
+  background-attachment: fixed;
+  background-size:100% 100%;
+     
+}
+.form h1{
+    color: #000;
+    font-size: 40px;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width:  600px;
+  margin-top:10px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form select{
+  width:353px;
+  height:50px;
+  font-size:14px;
+  font-family: "Roboto", sans-serif;
+  background-color:#f2f2f2;
+  color:#000000;
+ }
+.form input,textarea{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 70%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form input[type=submit],input[type=reset]{
+  font-family: "Roboto", sans-serif;
+  background: #41aadb;
+  width: 37%;
+  border-radius:10px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.form input[type=reset]
+{
+  background: #e83052;
+}
+</style>
+	<!-- ====================================================
+	header section -->
+
+	<!-- ====================================================
+	header section -->
+	<header class="top-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-5 header-logo">
+					<br>
+					<a href="index.html"><img src={% static "img/logo.png"%} alt="" class="img-responsive logo"></a>
+				</div>
+
+				<div class="col-md-7">
+					<nav class="navbar navbar-default">
+					  <div class="container-fluid nav-bar">
+					    <!-- Brand and toggle get grouped for better mobile display -->
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>
+					    </div>
+
+					    <!-- Collect the nav links, forms, and other content for toggling -->
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					      
+					      <ul class="nav navbar-nav navbar-right">
+					        <li><a href="/app/addsuccess/" >Home</a></li>
+							<li><a href="" >Appointment</a></li>
+							<li><a href="" >Cancle Appointment</a></li>
+					      </ul>
+					    </div><!-- /navbar-collapse -->
+					  </div><!-- / .container-fluid -->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>  
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" action="/patient/Appointment/" method="POST">{% csrf_token %}
+	<h1>Request An Appointment</h1>     
+      <input type="number" placeholder="Patient-Id" name="patient_id" required/>
+      <input type="text" placeholder="Patient-Name" name="patient_name" required/>
+	  <input type="number" placeholder="Patient-Age" name="patient_age" required/>
+	  <input type="date" placeholder="Appointment date" name="date" required>
+	  <textarea rows="4" cols="47" placeholder="Patient-Address" name="patient_address" required></textarea><br>
+	  <select name="doctor" required>
+	  <option value=" ">--Concerning Doctor--</option>
+	  <option value="Dr. M. Weiner">Dr. M. Weiner, M.B.B.S.</option>
+	  <option value="Dr. Danielle">Dr. Danielle, M.D.</option>
+	  <option value="Dr. Caitlin">Dr. Caitlin, M.S.</option>
+	  <option value="Dr. Joseph">Dr. Joseph, M.D.</option>
+	  <option value="Dr. Michael">Dr. Michael, M.S.</option>
+	  <option value="Dr. Hasina">Dr. Hasina, M.D.</option>
+	</select><br><br>
+	  <input type="Submit" value="Submit">
+      <input type="Reset">
+    </form>
+  </div>
+</div>

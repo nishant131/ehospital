@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>
+Bill Generation
+</title>
+</head>
+<body>
+<style>
+.Registration-page {
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+body {
+  background-image:url("images1.png");
+  background-repeat: no-repeat; 
+  background-position: right top;
+  opacity: 0.82;
+  filter: alpha(opacity=50);
+  background-attachment: fixed;
+  background-size:100% 100%;
+     
+}
+</style>
+</div>
+<div class="Registration-page">
+  
+<div class="form">
+    
+<form class="Registration-form">
+ 
+<h1>Bill Generation</h1>
+<table border="1">     
+<tr><td>PatientName:</td><td>{{p_name}}</td></tr>
+<tr><td>PharmacyBill:</td><td>{{med_bill}}</td></tr>
+<tr><td>Others:</td><td>{{others}}</td></tr>
+<tr><td>Total:</td><td>{{total}}</td></tr>
+</table>
+</form>
+
+</div>
+
+</body>
+</html>
